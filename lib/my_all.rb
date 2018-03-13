@@ -3,9 +3,10 @@ require 'pry'
 def my_all?(collection)
   binding.pry
   i = 0
-collection = []
+block_return_values = []
 while i < collection.length
-  collection << yield(collection[i])
+  block_return_values << yield(collection[i])
+  yield(collection[i])
   i += 1
 end
 collection
